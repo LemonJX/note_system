@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+</head>
+<body>
+    <p align="center">
+        <fieldset id="" style="width: 30%;">
+            <legend align="center">Welcome</legend>
+            <p class="error" style="color: red;">{{ error }}</p>
+            <form action="/" method="POST">
+                <p>username: <input style="width: 90%" type="text" name="username"></p>
+                <p>password: <input style="width: 90%" type="password" name="password"></p>
+                <!-- <p align="center"><input type="submit" name="submit" value="Login" /></p> -->
+                <!-- <p align="center"><input type="reset" value="Cancel" /></p> -->
+                <!-- <a href="/register" style="text-decoration: none">
+                    Don't have an account? Click here to sign-up!</a> -->
+                <p align="center"><button name="submit">Login</button></p>
+                <p align="center"><button name="register">Sign up</button></p>
+            </form>
+        </fieldset>
+    </p>
+</body>
+</html>

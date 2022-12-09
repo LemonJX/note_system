@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOTEBOOKS</title>
+    <!-- <style>
+        p {white-space: pre-line;}
+    </style> -->
+</head>
+<body>
+    <fieldset id="" style="width: 30%;">
+        <legend align="center">Notebooks</legend>
+        <form action="/notebook" method="POST">
+            <input type = "text" name = "search" placeholder="search notebook by name" style="width: 75%;">
+            <input type = "submit" name="searchbook" value = "search"/>
+        </form>
+        <form action="/notebook" method="POST">
+            <select class="form-control" name="selectTag" style="width: 77%;">
+                <option selected="selected">--select a tag--</option>
+                {% for item in alltags %}
+                <option value="{{item.tag}}">{{item.tag}}</option>
+                {% endfor %}
+           </select>
+            <input type = "submit" name="filterbook" value = "filter"/>
+        </form>
+        <form action="/note" method="POST">
+            {% for item in notebooks %}
+            <input type="radio" name="select" value="{{item.nb_createTime}}">{{item.nb_name}}<br>
+            {% endfor %}
+            <input type="submit" name="selectNotebook" value="select">
+        </form>
+        <form action="/notebook" method="POST">
+            <input type = "text" name = "newbook" placeholder="enter the name of a new notebook" style="width: 75%;">
+            <input type = "submit" name="createNotebook" value = "create"/>
+            <p style="color: red;">{{error}}</p>
+        </form>
+    </fieldset>
+</body>
+</html>

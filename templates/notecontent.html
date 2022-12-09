@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOTEBOOKS</title>
+    <!-- <style>
+        p {white-space: pre-line;}
+    </style> -->
+</head>
+<body>
+    <a href="/note"><button>back</button></a>
+    <fieldset id="" style="width: 30%;">
+        <legend align="center">{{title}}</legend> 
+        <pre>{{content}}</br></pre>
+        <a href="/edit"><button>edit</button></a>
+    </fieldset>
+    <fieldset id="" style="width: 30%;">
+        <legend align="center">Tags</legend>            
+        <form action="/notecontent" method="POST">
+            {% for item in tags %}
+            <input type="radio" name="selectTag" value="{{item.tag}}">{{item.tag}}<br>
+            {% endfor %}
+            <input type="submit" name="deleteTag" value="delete tag">
+        </form>
+        <form action="/notecontent" method="POST">
+            <input type = "text" name = "newtag" placeholder="enter a new tag for this note" style="width: 75%;">
+            <input type = "submit" name="createTag" value = "create"/>
+        </form>
+    </fieldset>
+    
+    <form action="/notecontent" method="POST">
+        <input type = "submit" name="deleteNote" value = "Delete this note" />
+    </form>
+</body>
+</html>

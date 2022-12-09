@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOTEBOOKS</title>
+    <!-- <style>
+        p {white-space: pre-line;}
+    </style> -->
+</head>
+<body>
+    <a href="/notebook"><button>back</button></a>
+
+    <fieldset id="" style="width: 30%;">
+        <legend align="center">Notes</legend>
+        {{notebookname}}
+        <form action="/note" method="POST">
+            <input type = "text" name = "search" placeholder="search note by title" style="width: 75%;">
+            <input type = "submit" name="searchnote" value = "search"/>
+        </form>
+        <form action="/note" method="POST">
+            <select class="form-control" name="selectTag" style="width: 77%;">
+                <option selected="selected">--select a tag--</option>
+                {% for item in alltags %}
+                <option value="{{item.tag}}">{{item.tag}}</option>
+                {% endfor %}
+           </select>
+            <input type = "submit" name="filternote" value = "filter"/>
+        </form>
+        <form action="/notecontent" method="POST">
+            {% for item in notes %}
+            <input type="radio" name="select" value="{{item.title}}">{{item.title}}<br>
+            {% endfor %}
+            <input type="submit" name="selectNote" value="select to view note">
+        </form>
+        <form action="/note" method="POST">
+            <input type = "text" name = "newnote" placeholder="enter the title of a new note" style="width: 75%;">
+            <input type = "submit" name="createNote" value = "create"/>
+            <p style="color: red;">{{error}}</p>
+        </form>
+    </fieldset>
+
+    <fieldset id="" style="width: 30%;">
+        <legend align="center">Tags</legend>            
+        <form action="/note" method="POST">
+            {% for item in tags %}
+            <input type="radio" name="selectTag" value="{{item.tag}}">{{item.tag}}<br>
+            {% endfor %}
+            <input type="submit" name="deleteTag" value="delete tag">
+        </form>
+        <form action="/note" method="POST">
+            <input type = "text" name = "newtag" placeholder="enter a new tag for this notebook" style="width: 75%;">
+            <input type = "submit" name="createTag" value = "create"/>
+        </form>
+    </fieldset>
+
+    <form action="/note" method="POST">
+        <input type = "submit" name="deleteNotebook" value = "Delete this notebook" />
+    </form>
+</body>
+</html>
