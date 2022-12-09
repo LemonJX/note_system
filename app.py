@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect
 
 config = {
         'user': "root",
-        'password': "Leyna0122",
+        'password': "yourMySQLpassword",
         'host': "localhost",
         'port': 3306,
         'db': "note_project",
