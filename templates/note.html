@@ -9,10 +9,9 @@
 </head>
 <body>
     <a href="/notebook"><button>back</button></a>
-
-    <fieldset id="" style="width: 30%;">
+    {{notebookname}}
+    <fieldset id="" style="width: 30%;"><!-- style="width: 100%;" -->
         <legend align="center">Notes</legend>
-        {{notebookname}}
         <form action="/note" method="POST">
             <input type = "text" name = "search" placeholder="search note by title" style="width: 75%;">
             <input type = "submit" name="searchnote" value = "search"/>
@@ -39,7 +38,7 @@
         </form>
     </fieldset>
 
-    <fieldset id="" style="width: 30%;">
+    <fieldset id="" style="width: 30%;"><!-- style="width: 100%;" -->
         <legend align="center">Tags</legend>            
         <form action="/note" method="POST">
             {% for item in tags %}

@@ -376,13 +376,13 @@ CALL createNoteTag('week2', 'lecture2', @nb3);
 CALL createNoteTag('week2', 'homework2', @nb3);
 
 -- test
--- SELECT * FROM users;
--- SELECT * FROM notebook;
--- SELECT * FROM booktag;
--- SELECT * FROM hasbooktag;
--- SELECT * FROM note;
--- SELECT * FROM notetag;
--- SELECT * FROM hasnotetag;
+SELECT * FROM users;
+SELECT * FROM notebook;
+SELECT * FROM booktag;
+SELECT * FROM hasbooktag;
+SELECT * FROM note;
+SELECT * FROM notetag;
+SELECT * FROM hasnotetag;
 
 -- SELECT checkusername('Alice');
 -- SELECT login('Alice', 'password1');

@@ -9,12 +9,12 @@
 </head>
 <body>
     <a href="/note"><button>back</button></a>
-    <fieldset id="" style="width: 30%;">
-        <legend align="center">{{title}}</legend> 
+    <fieldset id="" style="width: 30%;"><!-- style="width: 100%;" -->
+        <legend align="center">Note: {{title}}</legend> 
         <pre>{{content}}</br></pre>
         <a href="/edit"><button>edit</button></a>
     </fieldset>
-    <fieldset id="" style="width: 30%;">
+    <fieldset id="" style="width: 30%;"><!-- style="width: 100%;" -->
         <legend align="center">Tags</legend>            
         <form action="/notecontent" method="POST">
             {% for item in tags %}
